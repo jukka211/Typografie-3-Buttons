@@ -15,52 +15,67 @@ html, body {
     background-color: black;
 }
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
+   position: relative;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
     height: 95%; /* Ensures the container takes full height */
-    align-items: center; /* Center horizontally */
-    text-align: center; 
+    overflow-x: hidden;
+    overflow: hidden;
+
     
 }
       .btn {
+        position: absolute;
         text-align: center;
         border-radius: 50%;
-        width:45%;
-    height: 150px;
+        width:25%;
+    height: 17%;
     background-color: transparent;
       
       background-color: transparent;
       color:white;
       mix-blend-mode: exclusion;
-      
+      user-select: none; /* Prevent text selection */
+      -webkit-user-select: none; /* Safari */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* IE10+ */
+      transition: background-color 3s ease;
     }
     .btn-clicked-green {
       background-color: rgb(255, 255, 255) !important;
+      transition: background-color 3s ease;
     }
     .btn-clicked-blue {
       background-color: yellow;
+      transition: background-color 3s ease;
     }
     .btn-clicked-red {
       background-color: magenta;
+      transition: background-color 3s ease;
     }
     .btn-clicked-black {
       background-color: cyan;
+      transition: background-color 3s ease;
     }
     .btn-clicked-r {
       background-color: red;
+      transition: background-color 3s ease;
     }
     .btn-clicked-g {
       background-color: lime;
+      transition: background-color 3s ease;
     }
     .btn-clicked-b {
       background-color: blue;
+      transition: background-color 3s ease;
     }
+
+   
+    #btn1 { top: 0%; left: 0%; }
+        #btn2 { bottom: 0%; left: 0%; }
+        #btn3 { right: 0%; bottom: 0%; }
   </style>
 </head>
 <body>
@@ -69,6 +84,9 @@ html, body {
 <button id="btn2" class="btn">g</button>
 <button id="btn3" class="btn">b</button>
 </div>
+
+
+
 
 
 <script>
