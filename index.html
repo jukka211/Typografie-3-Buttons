@@ -12,6 +12,7 @@ html, body {
     height: 100%;
     overflow-x: hidden;
     overflow: hidden;
+    background-color: black;
 }
 .container {
     display: flex;
@@ -40,25 +41,36 @@ html, body {
       
     }
     .btn-clicked-green {
-      background-color: rgb(0, 255, 42) !important;
+      background-color: rgb(255, 255, 255) !important;
     }
     .btn-clicked-blue {
-      background-color: blue;
+      background-color: yellow;
     }
     .btn-clicked-red {
-      background-color: red;
+      background-color: magenta;
     }
     .btn-clicked-black {
-      background-color: black;
+      background-color: cyan;
+    }
+    .btn-clicked-r {
+      background-color: red;
+    }
+    .btn-clicked-g {
+      background-color: lime;
+    }
+    .btn-clicked-b {
+      background-color: blue;
     }
   </style>
 </head>
 <body>
 <div class="container">
-<button id="btn1" class="btn">1</button>
-<button id="btn2" class="btn">2</button>
-<button id="btn3" class="btn">3</button>
+<button id="btn1" class="btn">r</button>
+<button id="btn2" class="btn">g</button>
+<button id="btn3" class="btn">b</button>
 </div>
+
+
 <script>
   let btn1Clicked = false;
   let btn2Clicked = false;
@@ -98,19 +110,29 @@ html, body {
     if (btn1Clicked && btn2Clicked && btn3Clicked) {
       document.body.classList.add('btn-clicked-green');
     } else if (btn1Clicked && btn2Clicked) {
-      document.body.classList.remove('btn-clicked-green', 'btn-clicked-red', 'btn-clicked-black');
+      document.body.classList.remove('btn-clicked-green', 'btn-clicked-red', 'btn-clicked-black','btn-clicked-g','btn-clicked-b', 'btn-clicked-r');
       document.body.classList.add('btn-clicked-blue');
     } else if (btn1Clicked && btn3Clicked) {
-      document.body.classList.remove('btn-clicked-green', 'btn-clicked-blue', 'btn-clicked-black');
+      document.body.classList.remove('btn-clicked-green', 'btn-clicked-blue', 'btn-clicked-black','btn-clicked-g','btn-clicked-b', 'btn-clicked-r');
       document.body.classList.add('btn-clicked-red');
     } else if (btn2Clicked && btn3Clicked) {
-      document.body.classList.remove('btn-clicked-green', 'btn-clicked-blue', 'btn-clicked-red');
+      document.body.classList.remove('btn-clicked-green', 'btn-clicked-blue', 'btn-clicked-red','btn-clicked-g','btn-clicked-b', 'btn-clicked-r');
       document.body.classList.add('btn-clicked-black');
+    } else if (btn1Clicked) {
+      document.body.classList.remove('btn-clicked-green', 'btn-clicked-blue', 'btn-clicked-black','btn-clicked-g','btn-clicked-b');
+      document.body.classList.add('btn-clicked-r');
+    } else if (btn2Clicked) {
+      document.body.classList.remove('btn-clicked-green', 'btn-clicked-blue', 'btn-clicked-black', 'btn-clicked-r','btn-clicked-b');
+      document.body.classList.add('btn-clicked-g');
+    }else if (btn3Clicked) {
+      document.body.classList.remove('btn-clicked-green', 'btn-clicked-blue', 'btn-clicked-black', 'btn-clicked-r','btn-clicked-g');
+      document.body.classList.add('btn-clicked-b');
     } else {
-      document.body.classList.remove('btn-clicked-green', 'btn-clicked-blue', 'btn-clicked-red', 'btn-clicked-black');
+      document.body.classList.remove('btn-clicked-green', 'btn-clicked-blue', 'btn-clicked-red', 'btn-clicked-black','btn-clicked-r','btn-clicked-g','btn-clicked-b');
     }
   }
 </script>
+
 
 </body>
 </html>
