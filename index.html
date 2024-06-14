@@ -15,6 +15,7 @@ html, body {
     background-color: black;
 }
 .container {
+  
    position: relative;
     margin-left: 10px;
     margin-right: 10px;
@@ -23,11 +24,20 @@ html, body {
     height: 95%; /* Ensures the container takes full height */
     overflow-x: hidden;
     overflow: hidden;
+    text-align: center;
 
     
 }
+
+.container {
+  display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers the buttons horizontally */
+            justify-content: space-between; /* Centers the buttons vertically */
+            height: 95%; /* Optional: Adds space between buttons */
+        }
       .btn {
-        position: absolute;
+       
         text-align: center;
         border-radius: 50%;
         width:25%;
@@ -73,9 +83,7 @@ html, body {
     }
 
    
-    #btn1 { top: 0%; left: 0%; }
-        #btn2 { bottom: 0%; left: 0%; }
-        #btn3 { right: 0%; bottom: 0%; }
+   
   </style>
 </head>
 <body>
@@ -87,8 +95,51 @@ html, body {
 
 
 
+<script>
+  document.getElementById('btn1').addEventListener('touchstart', function() {
+      var btn3 = document.getElementById('btn3');
+      
+      btn3.style.transform = 'translateX(100%)'; 
+    });
 
 
+    document.getElementById('btn1').addEventListener('touchend', function() {
+    // Reset all transformations applied to btn1
+btn3.style.transform = 'none';
+
+  });
+</script>
+<script>
+  document.getElementById('btn3').addEventListener('touchstart', function() {
+      var btn1 = document.getElementById('btn1');
+      
+      btn1.style.transform = 'translateX(-100%)'; 
+    });
+
+
+    document.getElementById('btn3').addEventListener('touchend', function() {
+    // Reset all transformations applied to btn1
+btn1.style.transform = 'none';
+
+  });
+</script>
+<script>
+  document.getElementById('btn2').addEventListener('touchstart', function() {
+      var btn1 = document.getElementById('btn1');
+      var btn3 = document.getElementById('btn3');
+      
+      btn1.style.transform = 'translateX(-100%)'; 
+      btn3.style.transform = 'translateX(100%)'; 
+    });
+
+
+    document.getElementById('btn2').addEventListener('touchend', function() {
+    // Reset all transformations applied to btn1
+btn1.style.transform = 'none';
+btn3.style.transform = 'none';
+
+  });
+</script>
 <script>
   let btn1Clicked = false;
   let btn2Clicked = false;
