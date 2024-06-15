@@ -94,52 +94,6 @@ html, body {
 </div>
 
 
-
-<script>
-  document.getElementById('btn1').addEventListener('touchstart', function() {
-      var btn3 = document.getElementById('btn3');
-      
-      btn3.style.transform = 'translateX(100%)'; 
-    });
-
-
-    document.getElementById('btn1').addEventListener('touchend', function() {
-    // Reset all transformations applied to btn1
-btn3.style.transform = 'none';
-
-  });
-</script>
-<script>
-  document.getElementById('btn3').addEventListener('touchstart', function() {
-      var btn1 = document.getElementById('btn1');
-      
-      btn1.style.transform = 'translateX(-100%)'; 
-    });
-
-
-    document.getElementById('btn3').addEventListener('touchend', function() {
-    // Reset all transformations applied to btn1
-btn1.style.transform = 'none';
-
-  });
-</script>
-<script>
-  document.getElementById('btn2').addEventListener('touchstart', function() {
-      var btn1 = document.getElementById('btn1');
-      var btn3 = document.getElementById('btn3');
-      
-      btn1.style.transform = 'translateX(-100%)'; 
-      btn3.style.transform = 'translateX(100%)'; 
-    });
-
-
-    document.getElementById('btn2').addEventListener('touchend', function() {
-    // Reset all transformations applied to btn1
-btn1.style.transform = 'none';
-btn3.style.transform = 'none';
-
-  });
-</script>
 <script>
   let btn1Clicked = false;
   let btn2Clicked = false;
